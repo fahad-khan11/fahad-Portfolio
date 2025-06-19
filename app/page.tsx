@@ -116,7 +116,7 @@ export default function Portfolio() {
       title: "Lemara – Commercial Website",
       description:
         "Created in Next.js with NestJS backend to showcase commercial property listings with a performance-focused design. Focused on responsive UI and clean navigation experience.",
-      image: "/images/lamara1.jpg",
+      image: "/images/lamara1.png",
       technologies: ["Next.js", "NestJS", "PostgreSQL", "Responsive Design"],
       featured: false,
     },
