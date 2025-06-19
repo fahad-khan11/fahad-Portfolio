@@ -124,7 +124,7 @@ export default function Portfolio() {
       title: "Zaraschool – Education Website",
       description:
         "Built using Next.js with Node.js backend to manage school-related data and pages with a clean and responsive layout. Ensured performance and user-friendly navigation.",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/images/zara.png",
       technologies: ["Next.js", "Node.js", "MongoDB", "Education Management"],
       featured: false,
     },
