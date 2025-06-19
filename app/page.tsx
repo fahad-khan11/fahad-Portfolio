@@ -108,7 +108,7 @@ export default function Portfolio() {
       title: "AI Image Generator SaaS",
       description:
         "Full-stack SaaS application using Next.js and Node.js that generates images from text prompts using AI API. Features user input handling, dynamic rendering, and prompt history storage.",
-      image: "/images/saas1.jpg",
+      image: "/images/saas1.png",
       technologies: ["Next.js", "Node.js", "MongoDB", "AI API", "Tailwind CSS"],
       featured: true,
     },
