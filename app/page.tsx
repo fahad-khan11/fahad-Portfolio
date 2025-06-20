@@ -930,7 +930,7 @@ export default function Portfolio() {
                 className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
                 asChild
               >
-                <a href="https://github.com/fahad-khan11" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/fahadfarman/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-5 w-5 mr-2" />                  LinkedIn
                 </a>
               </Button>
