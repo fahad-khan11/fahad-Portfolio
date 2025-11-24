@@ -30,15 +30,22 @@ export function ContactForm() {
         throw new Error("Please fill in all required fields")
       }
 
+      // FIX: Use the correct parameter names that match your EmailJS template
+      const templateParams = {
+        from_name: formData.get('name'),     
+        user_name: formData.get('name'),   
+        user_email: formData.get('email'),    
+        message: formData.get('message'),
+        reply_to: formData.get('email'), 
+       from_email: formData.get('email')     
+      }
+
+      console.log('Sending params:', templateParams) // Debug log
+
       const response = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.get('name'),
-          from_email: formData.get('email'),
-          subject: formData.get('subject'),
-          message: formData.get('message')
-        }
+        templateParams
       )
 
       if (response.status === 200) {
