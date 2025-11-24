@@ -72,79 +72,105 @@ export default function Portfolio() {
     }))
   }
 
-  const frontendSkills = ["HTML", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Next.js"]
-  const backendSkills = ["Node.js", "NestJS", "MongoDB", "PostgreSQL"]
-  const databaseSkills = ["TypeORM", "Database Design"]
-  const programmingSkills = ["JavaScript", "TypeScript"]
+  // SKILL SET
+  const frontendSkills = ["HTML", "CSS", "JavaScript", "React.js", "Next.js", "Tailwind CSS", "ShadCN", "Admin dashboards"]
+  const backendSkills = ["Node.js", "NestJS", "REST APIs", "OAuth 2.0", "web sockets", "stripe"]
+  const databaseSkills = ["MongoDB", "PostgreSQL"]
+  const programmingSkills = ["JavaScript", "TypeScript", "C", "C++", "Java"]
   const otherSkills = [
-    "RESTful APIs",
+    "Typescript",
     "MVC Architecture",
-    "JWT & Cookies",
-    "Responsive Design",
+    "Authentication (JWT & Cookies)",
+    "Responsive Web Design",
     "Postman",
     "Swagger",
     "VS Code",
-    "Linux",
+    "Linux (Basic)",
   ]
 
   const projects = [
     {
+      title: "Corporateasy – Company Registration & Management Platform",
+      description:
+        "Worked as a Full-Stack Developer on Corporateasy, building the company registration form and integrating Stripe for secure payments. Developed Admin and Company panels with role-based access using Next.js and Tailwind CSS, while implementing backend logic in NestJS and PostgreSQL for authentication, data management, and payment workflows.",
+      image: "/corporate.png",
+      technologies: ["Next.js", "Tailwind CSS", "NestJS", "PostgreSQL", "Stripe"],
+      featured: true,
+      link: "https://corporateasy.com/"
+    },
+    {
+      title: "SehatYar – Digital Healthcare & Clinic Management System",
+      description:
+        "Worked as a Full-Stack Developer on SehatYar, a healthcare platform for patients, doctors, receptionists, and admins. Developed modules for authentication, multi-clinic management, appointments, electronic medical records (EMR), AI-assisted summaries, and billing. Built the frontend with Next.js and Tailwind CSS, and the backend with NestJS, PostgreSQL, and TypeORM, ensuring secure APIs and role-based access control.",
+      image: "/sehatyar.png",
+      technologies: ["Next.js", "Tailwind CSS", "NestJS", "PostgreSQL", "TypeORM", "AI"],
+      featured: true,
+      link: "https://sehatyar.vercel.app/"
+    },
+    {
+      title: "Gigjives - Project Management Tool",
+      description:
+        "Worked as a Frontend Developer on Gigjives – Project Management Tool, building role-based modules for Super Admin, Admin, Manager, and Employee. Developed responsive dashboards, user management, and task workflows using Next.js, Tailwind CSS, and shadcn UI, ensuring a smooth and intuitive user experience.",
+      image: "/gigjives.png",
+      technologies: ["Next.js", "Tailwind CSS", "shadcn UI"],
+      featured: true,
+      link: "https://gig-gives.vercel.app/"
+    },
+    {
+      title: "Shirka Noura – Appliance & AC Repair Website",
+      description:
+        "Developed the complete website using Next.js and shadcn/ui, with responsive layouts and interactive UI components. Integrated EmailJS for contact forms and WhatsApp for instant customer support. Optimized performance with clean, scalable code for cross-device compatibility and a smooth user experience.",
+      image: "/shirkaNora.png",
+      technologies: ["Next.js", "shadcn/ui", "EmailJS", "WhatsApp"],
+      featured: false,
+      link: "https://www.shirka-noura.com/"
+    },
+    {
+      title: "Portfolio Website – Client Project",
+      description:
+        "Developed and deployed a professional portfolio website for a client using Next.js, Tailwind CSS, and TypeScript. Configured custom domain and DNS settings on Hostinger and deployed on Vercel, ensuring high performance, responsive design, and seamless user experience.",
+      image: "/izaz.png",
+      technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Vercel", "Hostinger"],
+      featured: false,
+      link: "https://www.izazdigital.com/"
+    },
+    {
+      title: "Asrar – Booking Portal Website",
+      description:
+        "Worked as a Full Stack Developer on Asrar – Booking Portal, a platform where hotels book cars for their customers by providing customer details. Developed hotel-side features for creating and managing bookings, while on the admin side implemented driver assignment, fare management, booking status updates, and CSV exports. Built with Next.js, Tailwind CSS, shadcn UI on the frontend and NestJS with PostgreSQL on the backend with secure authentication and role-based access.",
+      image: "/asrar.png",
+      technologies: ["Next.js", "Tailwind CSS", "shadcn UI", "NestJS", "PostgreSQL"],
+      featured: false,
+      link: "https://www.asrarbookingportal.online/"
+    },
+    {
       title: "Aerona – Hotel Booking Website",
       description:
-        "Developed in Next.js for managing hotel listings and bookings with a responsive and modern UI. Implemented secure routing, user authentication, and booking functionality.",
+        "Worked as a Frontend Developer on Aeronaa, a travel booking platform. Built responsive layouts and interactive UI components for hotels, flights, and rentals. Optimized performance with clean, scalable frontend code for cross-device support. Collaborated with designers and backend team to deliver a smooth user experience.",
       image: image1,
       technologies: ["Next.js", "React", "Node.js", "MongoDB", "Authentication"],
-      featured: true,
+      featured: false,
+      link: "https://aeronaa.com/"
     },
     {
       title: "S4 – Job Posting Platform",
       description:
-        "Full-stack application using React and Tailwind CSS for frontend, NestJS for backend. Features QR code generation, dynamic navigation, and Google Maps integration with Firebase API.",
+        "Worked as a Full Stack Developer on S4-Job posting platform using React and Tailwind CSS for the frontend, and NestJS for the backend. Implemented QR code generation, dynamic navigation, and Google Maps integration with Firebase API for real-time data synchronization. Designed a responsive user interface ensuring seamless performance across devices.",
       image: "/images/s41.png",
       technologies: ["React", "Tailwind CSS", "NestJS", "PostgreSQL", "Firebase", "Google Maps"],
-      featured: true,
+      featured: false,
+      link: "https://s-four00.vercel.app/"
     },
     {
-      title: "AI Image Generator SaaS",
+      title: "AI Image Generator SaaS – Personal Project",
       description:
-        "Full-stack SaaS application using Next.js and Node.js that generates images from text prompts using AI API. Features user input handling, dynamic rendering, and prompt history storage.",
+        "Developed a full-stack SaaS application using Next.js and Node.js that generates images from user-provided text prompts using an AI image generation API (Dropbox API). Implemented user input handling, dynamic image rendering, and prompt history storage. Designed a clean and responsive user interface with Tailwind CSS for a smooth user experience.",
       image: "/images/saas1.png",
-      technologies: ["Next.js", "Node.js", "MongoDB", "AI API", "Tailwind CSS"],
-      featured: true,
-    },
-    {
-      title: "Lemara – Commercial Website",
-      description:
-        "Created in Next.js with NestJS backend to showcase commercial property listings with a performance-focused design. Focused on responsive UI and clean navigation experience.",
-      image: "/images/lamara1.png",
-      technologies: ["Next.js", "NestJS", "PostgreSQL", "Responsive Design"],
+      technologies: ["Next.js", "Node.js", "Dropbox API", "Tailwind CSS"],
       featured: false,
-    },
-    {
-      title: "Zaraschool – Education Website",
-      description:
-        "Built using Next.js with Node.js backend to manage school-related data and pages with a clean and responsive layout. Ensured performance and user-friendly navigation.",
-      image: "/images/zara.png",
-      technologies: ["Next.js", "Node.js", "MongoDB", "Education Management"],
-      featured: false,
-    },
-    {
-      title: "Ecommerce Website",
-      description:
-        "Fully responsive e-commerce website using the MERN stack. Implemented user authentication, product listings, and shopping cart functionality with clean UI.",
-      image: "/images/fshop.JPG",
-      technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
-      featured: false,
-    },
-     {
-      title: "Uni Portal – University Management System",
-      description:
-        "Comprehensive enterprise application with React frontend and NestJS backend. Features interactive data visualizations, dynamic navigation, and Google Maps integration with real-time data synchronization.",
-      image: "/images/port.png",
-      technologies: ["React", "NestJS", "PostgreSQL", "TypeORM", "Firebase", "Google Maps"],
-      featured: false,
-    },
-  ]
+      link: "#"
+    }
+  ];
 
   // Animation variants (fix: use allowed ease value)
   const sectionVariants = {
@@ -576,7 +602,8 @@ export default function Portfolio() {
                       Web Developer
                     </CardTitle>
                     <CardDescription className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">
-                      Firnas.tech, Abbottabad, Pakistan • Dec 2024 - Present
+                      Firnas.tech, Abbottabad
+                      March 2025 - Present
                     </CardDescription>
                   </div>
                 </div>
@@ -587,26 +614,39 @@ export default function Portfolio() {
                     <li className="flex items-start gap-4">
                       <div className="w-2 h-2 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm lg:text-base leading-relaxed">
-                        Developing responsive user interfaces using React.js and Tailwind CSS on the frontend
+                        Developing responsive user interfaces using React.js and Tailwind CSS on the frontend. Building and integrating secure RESTful APIs using Node.js and NestJS on the backend. Working with MongoDB and PostgreSQL for database management. Collaborating with the team in a professional environment, improving communication, problem-solving, and time management skills.
                       </span>
                     </li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
+            {/* Intern Experience */}
+            <Card className="max-w-5xl mx-auto mt-8 bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-2xl shadow-black/10 dark:shadow-white/10 hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <CardHeader className="pb-6 lg:pb-8">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-6">
+                  <div className="p-4 lg:p-5 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl shadow-xl">
+                    <Briefcase className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <CardTitle className="text-2xl lg:text-3xl text-gray-800 dark:text-gray-200 mb-2">
+                      Web Developer (Intern)
+                    </CardTitle>
+                    <CardDescription className="text-lg lg:text-xl text-gray-600 dark:text-gray-400">
+                      Firnas.tech, Abbottabad
+                      <br />
+                      Dec 2024 - March 2025
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-6 lg:p-8">
+                  <ul className="space-y-4 lg:space-y-5 text-gray-600 dark:text-gray-300">
                     <li className="flex items-start gap-4">
                       <div className="w-2 h-2 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-sm lg:text-base leading-relaxed">
-                        Building and integrating secure RESTful APIs using Node.js and NestJS on the backend
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm lg:text-base leading-relaxed">
-                        Working with MongoDB and PostgreSQL for database management
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-2 h-2 bg-gradient-to-r from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-sm lg:text-base leading-relaxed">
-                        Collaborating with the team in a professional environment, improving communication,
-                        problem-solving, and time management skills
+                        I worked as a Web Developer Intern at Firnas.tech, where I learned and implemented frontend development using React.js and Next.js along with Tailwind CSS. On the backend, I worked with Node.js and gained hands-on experience integrating APIs and managing data with MongoDB, while also focusing on learning PostgreSQL. This role allowed me to build UI components, connect them with backend services, and improve my skills while working in a professional team environment.
                       </span>
                     </li>
                   </ul>
@@ -645,7 +685,7 @@ export default function Portfolio() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ staggerChildren: 0.12 }}
-                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch"
               >
                 {projects.map((project, index) => (
                   <motion.div
@@ -657,7 +697,7 @@ export default function Portfolio() {
                   >
                     <Card
                       key={index}
-                      className={`group overflow-hidden bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 ${
+                      className={`group overflow-hidden bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col ${
                         project.featured ? "ring-2 ring-gray-300 dark:ring-gray-600" : ""
                       }`}
                     >
@@ -682,6 +722,20 @@ export default function Portfolio() {
                           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFWlwmYWmNHEL0AAAAABJRU5ErkJggg=="
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-black/40 transition-all duration-300"></div>
+                        {/* Live Link Button Overlay */}
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+                          style={{ background: 'rgba(0,0,0,0.45)' }}
+                        >
+                          <button
+                            className="px-4 py-2 rounded-lg bg-[#020203] text-white font-semibold shadow-lg hover:bg-[#020203] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 text-base"
+                          >
+                            Live Link
+                          </button>
+                        </a>
                       </div>
                       <CardHeader className="pb-4">
                         <CardTitle className="text-lg lg:text-xl text-gray-800 dark:text-gray-200 leading-tight group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors">
@@ -758,7 +812,7 @@ export default function Portfolio() {
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 lg:mb-8 bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-white dark:via-gray-300 dark:to-gray-500 bg-clip-text text-transparent">
                 Get In Touch
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-black to-gray-500 dark:from-white dark:to-gray-400 mx-auto mb-8"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-black to-gray-500 dark:from-white dark:to-gray-400 mx-auto"></div>
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 I'm always open to discussing new opportunities and interesting projects. Let's connect and create
                 something amazing together!
@@ -778,7 +832,7 @@ export default function Portfolio() {
                       href="https://mail.google.com/mail/?view=cm&to=fahadfarman00@gmail.com" target="_blank"
                       className="block w-full"
                     >
-                      <Card className="text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer group">
+                      <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer group">
                         <CardHeader className="pb-4">
                           <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                             <Mail className="h-8 w-8 text-white" />
@@ -792,7 +846,7 @@ export default function Portfolio() {
                     </a>
                   </Button>
 
-                  <Card className="text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <svg
@@ -829,7 +883,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <Card className="text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <Github className="h-8 w-8 text-white" />
@@ -851,7 +905,7 @@ export default function Portfolio() {
                     </CardContent>
                   </Card>
 
-                  <Card className="text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <Linkedin className="h-8 w-8 text-white" />
