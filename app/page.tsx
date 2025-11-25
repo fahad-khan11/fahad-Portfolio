@@ -191,6 +191,61 @@ export default function Portfolio() {
   }
 
   return (
+    <>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Fahad Farman",
+            url: "https://fahad-portfolio-psi-seven.vercel.app",
+            image: "https://fahad-portfolio-psi-seven.vercel.app/images/fahad11.png",
+            jobTitle: "Full Stack Developer",
+            worksFor: {
+              "@type": "Organization",
+              name: "Firnas.tech"
+            },
+            alumniOf: {
+              "@type": "EducationalOrganization",
+              name: "COMSATS University Islamabad"
+            },
+            sameAs: [
+              "https://github.com/fahad-khan11",
+              "https://www.linkedin.com/in/fahadfarman/"
+            ],
+            knowsAbout: [
+              "Full Stack Development",
+              "Next.js",
+              "React",
+              "Node.js",
+              "NestJS",
+              "PostgreSQL",
+              "MongoDB",
+              "JavaScript",
+              "TypeScript"
+            ],
+            description: "Full Stack Developer and Software Engineering student at COMSATS University. Specialized in Next.js, React, Node.js, NestJS, PostgreSQL, and MongoDB."
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Fahad Farman Portfolio",
+            url: "https://fahad-portfolio-psi-seven.vercel.app",
+            description: "Portfolio website of Fahad Farman - Full Stack Developer",
+            author: {
+              "@type": "Person",
+              name: "Fahad Farman"
+            }
+          })
+        }}
+      />
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-slate-950 dark:via-purple-950 dark:to-indigo-950 text-gray-900 dark:text-gray-200 transition-all duration-500">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/70 dark:bg-white/5 backdrop-blur-xl border-b border-white/40 dark:border-white/10 z-50 shadow-lg shadow-black/5 dark:shadow-black/20 supports-[backdrop-filter]:bg-white/5">
@@ -1101,5 +1156,6 @@ export default function Portfolio() {
         </div>
       </footer>
     </div>
+    </>
   )
 }
