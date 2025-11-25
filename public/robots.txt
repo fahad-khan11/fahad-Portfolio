@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://fahad-portfolio-psi-seven.vercel.app/sitemap.xml
+Sitemap: https://fahadfarman.me/sitemap.xml

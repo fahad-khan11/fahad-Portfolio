@@ -192,57 +192,247 @@ export default function Portfolio() {
 
   return (
     <>
-      {/* JSON-LD Structured Data for SEO */}
+      {/* Comprehensive JSON-LD Structured Data for GEO, AEO, and SEO */}
+      
+      {/* Person Schema - Enhanced for GEO/AEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
+            "@id": "https://fahadfarman.me/",
             name: "Fahad Farman",
-            url: "https://fahad-portfolio-psi-seven.vercel.app",
-            image: "https://fahad-portfolio-psi-seven.vercel.app/images/fahad11.png",
+            alternateName: [
+              "fahad farman",
+              "FAHAD FARMAN",
+              "Fahad farman",
+              "fahad Farman",
+              "FAHAD farman",
+              "Fahad",
+              "fahad",
+              "Fahad Farman "
+            ],
+            givenName: "Fahad",
+            familyName: "Farman",
+            url: "https://fahadfarman.me",
+            image: {
+              "@type": "ImageObject",
+              url: "https://fahadfarman.me/images/fahad11.png",
+              width: 192,
+              height: 192
+            },
             jobTitle: "Full Stack Developer",
+            description: "Fahad Farman is a Full Stack Developer and Software Engineering student at COMSATS University Islamabad. Expert in building modern web applications using Next.js, React, Node.js, NestJS, PostgreSQL, and MongoDB. Specialized in full-stack development with 1+ years of professional experience.",
+            email: "mailto:fahadfarman00@gmail.com",
+            telephone: "+03406218617",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Abbottabad",
+              addressRegion: "Khyber Pakhtunkhwa",
+              addressCountry: "Pakistan"
+            },
             worksFor: {
               "@type": "Organization",
-              name: "Firnas.tech"
+              name: "Firnas.tech",
+              url: "https://firnas.tech/",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Abbottabad",
+                addressCountry: "Pakistan"
+              }
             },
             alumniOf: {
               "@type": "EducationalOrganization",
-              name: "COMSATS University Islamabad"
+              name: "COMSATS University Islamabad Abbottabad Campus",
+              url: "https://www.comsats.edu.pk",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Abbottabad",
+                addressCountry: "Pakistan"
+              }
             },
             sameAs: [
               "https://github.com/fahad-khan11",
-              "https://www.linkedin.com/in/fahadfarman/"
+              "https://www.linkedin.com/in/fahadfarman/",
+              "https://fahadfarman.me"
             ],
             knowsAbout: [
               "Full Stack Development",
+              "Web Development",
               "Next.js",
-              "React",
+              "React.js",
               "Node.js",
               "NestJS",
               "PostgreSQL",
               "MongoDB",
               "JavaScript",
-              "TypeScript"
+              "TypeScript",
+              "Tailwind CSS",
+              "REST APIs",
+              "Authentication",
+              "Database Design",
+              "Frontend Development",
+              "Backend Development",
+              "Software Engineering"
             ],
-            description: "Full Stack Developer and Software Engineering student at COMSATS University. Specialized in Next.js, React, Node.js, NestJS, PostgreSQL, and MongoDB."
+            knowsLanguage: [
+              {
+                "@type": "Language",
+                name: "English",
+                alternateName: "en"
+              },
+              {
+                "@type": "Language",
+                name: "Urdu",
+                alternateName: "ur"
+              }
+            ],
+            hasOccupation: {
+              "@type": "Occupation",
+              name: "Full Stack Developer",
+              occupationLocation: {
+                "@type": "City",
+                name: "Abbottabad"
+              },
+              skills: "Next.js, React, Node.js, NestJS, PostgreSQL, MongoDB, TypeScript, JavaScript, Tailwind CSS, REST APIs"
+            }
           })
         }}
       />
+
+      {/* ProfilePage Schema for GEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            mainEntity: {
+              "@id": "https://fahadfarman.me/"
+            },
+            name: "Fahad Farman - Full Stack Developer Portfolio",
+            description: "Professional portfolio showcasing Fahad Farman's work as a Full Stack Developer. View projects, skills, and experience in Next.js, React, Node.js, and modern web technologies.",
+            url: "https://fahadfarman.me"
+          })
+        }}
+      />
+
+      {/* WebSite Schema with SearchAction for AEO */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebSite",
+            "@id": "https://fahadfarman.me/",
             name: "Fahad Farman Portfolio",
-            url: "https://fahad-portfolio-psi-seven.vercel.app",
-            description: "Portfolio website of Fahad Farman - Full Stack Developer",
+            alternateName: "Fahad Farman - Full Stack Developer",
+            url: "https://fahadfarman.me",
+            description: "Portfolio website of Fahad Farman - Full Stack Developer specializing in Next.js, React, Node.js, NestJS, PostgreSQL, and MongoDB",
+            inLanguage: "en-US",
             author: {
-              "@type": "Person",
-              name: "Fahad Farman"
+              "@id": "https://fahadfarman.me/"
+            },
+            creator: {
+              "@id": "https://fahadfarman.me/"
             }
+          })
+        }}
+      />
+
+      {/* BreadcrumbList for Navigation */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://fahadfarman.me"
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "About",
+                item: "https://fahadfarman.me#about"
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: "Experience",
+                item: "https://fahadfarman.me#experience"
+              },
+              {
+                "@type": "ListItem",
+                position: 4,
+                name: "Projects",
+                item: "https://fahadfarman.me#projects"
+              },
+              {
+                "@type": "ListItem",
+                position: 5,
+                name: "Contact",
+                item: "https://fahadfarman.me#contact"
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* FAQPage Schema for AEO - Common Questions */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Who is Fahad Farman?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Fahad Farman is a Full Stack Developer and Software Engineering student at COMSATS University Islamabad. He specializes in building modern web applications using Next.js, React, Node.js, NestJS, PostgreSQL, and MongoDB."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "What technologies does Fahad Farman work with?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Fahad Farman works with Next.js, React.js, Node.js, NestJS, PostgreSQL, MongoDB, TypeScript, JavaScript, Tailwind CSS, and various modern web development technologies. He specializes in full-stack development."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "Where does Fahad Farman work?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Fahad Farman works as a Web Developer at Firnas.tech in Abbottabad, Pakistan. He has experience working on various full-stack projects including healthcare platforms, company registration systems, and project management tools."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "What is Fahad Farman's educational background?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Fahad Farman is currently pursuing a Bachelor of Science in Software Engineering at COMSATS University Islamabad, Abbottabad Campus (Sep 2023 - Present)."
+                }
+              },
+              {
+                "@type": "Question",
+                name: "How can I contact Fahad Farman?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "You can contact Fahad Farman through his portfolio website contact form, LinkedIn (https://www.linkedin.com/in/fahadfarman/), or GitHub (https://github.com/fahad-khan11)."
+                }
+              }
+            ]
           })
         }}
       />
