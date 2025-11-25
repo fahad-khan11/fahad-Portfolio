@@ -676,8 +676,9 @@ export default function Portfolio() {
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-black to-gray-500 dark:from-white dark:to-gray-400 mx-auto mb-8"></div>
               <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                I'm a passionate full stack developer and software engineering student at COMSATS University Islamabad,
-                specializing in building modern, responsive web applications with cutting-edge technologies.
+                I am a Full Stack Web Developer with 1+ year of hands-on experience in building responsive and scalable applications using
+React.js, Next.js, Node.js, NestJS, and databases like MongoDB and PostgreSQL. Skilled in developing secure RESTful
+APIs, role-based authentication, and delivering user-friendly interfaces in professional team environments.
               </p>
             </div>
 
