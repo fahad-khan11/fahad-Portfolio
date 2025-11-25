@@ -64,7 +64,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="bg-black/5 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-white/10">
+    <Card className="bg-white/60 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-black/20">
       <CardHeader className="pb-6">
         <div className="flex items-center gap-3 mb-4">
           <div className="p-3 bg-gradient-to-br from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-xl shadow-lg">
@@ -90,7 +90,7 @@ export function ContactForm() {
                   name="name"
                   placeholder="Your name"
                   required
-                  className="pl-10 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400"
+                  className="pl-10 bg-white/50 dark:bg-white/5 border-white/40 dark:border-white/10 focus:border-indigo-500/50 backdrop-blur-sm transition-all duration-300 text-gray-900 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 />
               </div>
             </div>
@@ -106,7 +106,7 @@ export function ContactForm() {
                   type="email"
                   placeholder="your.email@example.com"
                   required
-                  className="pl-10 bg-white/5 dark:bg-black/5 border-white/20 dark:border-white/10 focus:border-indigo-500/50 dark:focus:border-indigo-400/50 backdrop-blur-sm transition-all duration-300"
+                  className="pl-10 bg-white/50 dark:bg-white/5 border-white/40 dark:border-white/10 focus:border-indigo-500/50 backdrop-blur-sm transition-all duration-300 text-gray-900 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400"
                 />
               </div>
             </div>
@@ -121,13 +121,13 @@ export function ContactForm() {
               placeholder="Tell me about your project or just say hello!"
               rows={5}
               required
-              className="bg-white/5 dark:bg-black/5 border-white/20 dark:border-white/10 focus:border-indigo-500/50 dark:focus:border-indigo-400/50 backdrop-blur-sm resize-none transition-all duration-300"
+              className="bg-white/50 dark:bg-white/5 border-white/40 dark:border-white/10 focus:border-indigo-500/50 backdrop-blur-sm resize-none transition-all duration-300 text-gray-900 dark:text-gray-200 placeholder:text-gray-500 dark:placeholder:text-gray-400"
             />
           </div>
           <Button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-black via-gray-800 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 hover:from-gray-900 hover:via-gray-700 hover:to-gray-500 dark:hover:from-gray-100 dark:hover:via-gray-300 dark:hover:to-gray-500 text-white dark:text-black py-3 text-lg font-semibold shadow-xl shadow-black/20 dark:shadow-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white py-4 text-lg font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {isLoading ? (
               <>

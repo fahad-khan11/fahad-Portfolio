@@ -39,6 +39,14 @@ export default function Portfolio() {
   const [darkMode, setDarkMode] = useState(true) // Changed initial state to true
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [expandedDescriptions, setExpandedDescriptions] = useState<{ [key: number]: boolean }>({})
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     if (darkMode) {
@@ -183,9 +191,9 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-slate-950 dark:to-indigo-950 text-foreground transition-all duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-slate-950 dark:via-purple-950 dark:to-indigo-950 text-gray-900 dark:text-gray-200 transition-all duration-500">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/10 dark:bg-black/20 backdrop-blur-xl border-b border-white/20 dark:border-white/10 z-50 shadow-lg shadow-black/5 dark:shadow-white/5 supports-[backdrop-filter]:bg-white/5">
+      <nav className="fixed top-0 w-full bg-white/70 dark:bg-white/5 backdrop-blur-xl border-b border-white/40 dark:border-white/10 z-50 shadow-lg shadow-black/5 dark:shadow-black/20 supports-[backdrop-filter]:bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-white dark:via-gray-300 dark:to-gray-500 bg-clip-text text-transparent">
@@ -196,50 +204,50 @@ export default function Portfolio() {
             <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-sm lg:text-base"
+                className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-sm lg:text-base hover:scale-105 transform"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-sm lg:text-base"
+                className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-sm lg:text-base hover:scale-105 transform"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("experience")}
-                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-sm lg:text-base"
+                className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-sm lg:text-base hover:scale-105 transform"
               >
                 Experience
               </button>
               <button
                 onClick={() => scrollToSection("projects")}
-                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-sm lg:text-base"
+                className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-sm lg:text-base hover:scale-105 transform"
               >
                 Projects
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-sm lg:text-base"
+                className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-sm lg:text-base hover:scale-105 transform"
               >
                 Contact
               </button>
               <div className="flex items-center space-x-2 ml-4 lg:ml-6">
-                <Button variant="ghost" size="icon" className="hover:bg-gray-100 dark:hover:bg-gray-800" asChild>
+                <Button variant="ghost" size="icon" className="hover:bg-violet-100 dark:hover:bg-violet-900/30 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" asChild>
                   <a href="https://github.com/fahad-khan11" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 lg:h-5 lg:w-5 text-gray-600 dark:text-gray-400" />
+                    <Github className="h-4 w-4 lg:h-5 lg:w-5" />
                   </a>
                 </Button>
-                <Button variant="ghost" size="icon" className="hover:bg-gray-100 dark:hover:bg-gray-800" asChild>
+                <Button variant="ghost" size="icon" className="hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" asChild>
                   <a href="https://www.linkedin.com/in/fahadfarman/" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="h-4 w-4 lg:h-5 lg:w-5 text-gray-600 dark:text-gray-400" />
+                    <Linkedin className="h-4 w-4 lg:h-5 lg:w-5" />
                   </a>
                 </Button>
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={() => setDarkMode(!darkMode)}
-                  className="hover:bg-gray-100 dark:hover:bg-gray-800"
+                  className="hover:bg-yellow-100 dark:hover:bg-gray-800 hover:text-yellow-600 transition-colors"
                 >
                   {darkMode ? (
                     <Sun className="h-4 w-4 lg:h-5 lg:w-5 text-yellow-500" />
@@ -277,41 +285,41 @@ export default function Portfolio() {
               <div className="flex flex-col space-y-4">
                 <button
                   onClick={() => scrollToSection("home")}
-                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-left py-2"
+                  className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-left py-2"
                 >
                   Home
                 </button>
                 <button
                   onClick={() => scrollToSection("about")}
-                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-left py-2"
+                  className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-left py-2"
                 >
                   About
                 </button>
                 <button
                   onClick={() => scrollToSection("experience")}
-                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-left py-2"
+                  className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-left py-2"
                 >
                   Experience
                 </button>
                 <button
                   onClick={() => scrollToSection("projects")}
-                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-left py-2"
+                  className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-left py-2"
                 >
                   Projects
                 </button>
                 <button
                   onClick={() => scrollToSection("contact")}
-                  className="text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 font-medium text-left py-2"
+                  className="text-gray-700 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 font-medium text-left py-2"
                 >
                   Contact
                 </button>
                 <div className="flex items-center space-x-3 pt-4">
-                  <Button variant="ghost" size="icon" className="hover:bg-gray-100 dark:hover:bg-gray-800" asChild>
+                  <Button variant="ghost" size="icon" className="hover:bg-violet-100 dark:hover:bg-violet-900/30 hover:text-violet-600 dark:hover:text-violet-400 transition-colors" asChild>
                     <a href="https://github.com/fahad-khan11" target="_blank" rel="noopener noreferrer">
                       <Github className="h-5 w-5" />
                     </a>
                   </Button>
-                  <Button variant="ghost" size="icon" className="hover:bg-gray-100 dark:hover:bg-gray-800" asChild>
+                  <Button variant="ghost" size="icon" className="hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" asChild>
                     <a
                       href="https://www.linkedin.com/in/fahadfarman/"
                       target="_blank"
@@ -368,7 +376,7 @@ export default function Portfolio() {
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all duration-300 shadow-sm"
+                    className="text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 bg-white/80 dark:bg-white/5 text-gray-800 dark:text-gray-200 border border-indigo-200 dark:border-indigo-500/30 hover:border-indigo-400 dark:hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/50 transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5"
                   >
                     {skill}
                   </Badge>
@@ -377,7 +385,7 @@ export default function Portfolio() {
               <div className="flex justify-center gap-3 sm:gap-4 flex-wrap px-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-black via-gray-800 to-gray-600 dark:from-white dark:via-gray-200 dark:to-gray-400 hover:from-gray-900 hover:via-gray-700 hover:to-gray-500 dark:hover:from-gray-100 dark:hover:via-gray-300 dark:hover:to-gray-500 text-white dark:text-black px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl shadow-black/20 dark:shadow-white/20 hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95"
                   onClick={() => scrollToSection("contact")}
                 >
                   Get In Touch
@@ -386,19 +394,19 @@ export default function Portfolio() {
                   variant="outline"
                   size="lg"
                   onClick={downloadCV}
-                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95"
                 >
-                  <Download className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                  <Download className="h-5 w-5 mr-2" />
                   Download CV
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white border-0 px-8 py-4 text-lg font-bold shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95"
                   asChild
                 >
                   <a href="https://github.com/fahad-khan11" target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 sm:h-5 sm:w-5 mr-2" />
+                    <Github className="h-5 w-5 mr-2" />
                     GitHub
                   </a>
                 </Button>
@@ -477,7 +485,7 @@ export default function Portfolio() {
                 <div className="w-16 h-0.5 bg-gray-400 dark:bg-gray-600 mx-auto"></div>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                <Card className="group bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Code className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -501,7 +509,7 @@ export default function Portfolio() {
 
 
 
-                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                <Card className="group bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Server className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -525,7 +533,7 @@ export default function Portfolio() {
 
 
 
-                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                <Card className="group bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Database className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -549,7 +557,7 @@ export default function Portfolio() {
 
 
 
-                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                <Card className="group bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Award className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -595,7 +603,7 @@ export default function Portfolio() {
 
 
 
-            <Card className="max-w-5xl mx-auto bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
+            <Card className="max-w-5xl mx-auto bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-[1.02]">
               <CardHeader className="pb-6 lg:pb-8">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-6">
                   <div className="p-4 lg:p-5 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl shadow-xl">
@@ -684,24 +692,118 @@ export default function Portfolio() {
 
 
 
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ staggerChildren: 0.12 }}
-                className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch"
-              >
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-stretch">
                 {projects.map((project, index) => (
-                  <motion.div
-                    key={index}
-                    variants={cardVariants}
-                    whileHover={{ scale: 1.04, transition: { duration: 0.2 } }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ type: "spring", stiffness: 120, damping: 15 }}
-                  >
+                  isMobile ? (
+                    <div key={index} className="h-full">
+                      <Card
+                        className={`group overflow-hidden bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 hover:scale-105 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col ${
+                          project.featured ? "ring-2 ring-indigo-500/50 dark:ring-indigo-400/50" : ""
+                        }`}
+                      >
+                        {project.featured && (
+                          <div className="absolute top-4 right-4 z-10">
+                            <Badge className="bg-gradient-to-r from-gray-800 to-black dark:from-gray-200 dark:to-white text-white dark:text-black shadow-lg">
+                              <Star className="h-3 w-3 mr-1" />
+                              Featured
+                            </Badge>
+                          </div>
+                        )}
+                        <div className="aspect-video relative overflow-hidden">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500"
+                            loading={index < 3 ? "eager" : "lazy"}
+                            quality={75}
+                            placeholder="blur"
+                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABFWlwmYWmNHEL0AAAAABJRU5ErkJggg=="
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent group-hover:from-black/40 transition-all duration-300"></div>
+                          {/* Live Link Button Overlay */}
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20"
+                            style={{ background: 'rgba(0,0,0,0.45)' }}
+                          >
+                            <button
+                              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/40 hover:shadow-indigo-500/60 transform hover:scale-105 transition-all duration-300 text-sm"
+                            >
+                              Live Link
+                            </button>
+                          </a>
+                        </div>
+                        <CardHeader className="pb-4">
+                          <CardTitle className="text-lg lg:text-xl text-gray-800 dark:text-gray-200 leading-tight group-hover:text-gray-900 dark:group-hover:text-gray-100 transition-colors">
+                            {project.title}
+                          </CardTitle>
+                          <div className="relative">
+                            <div className={`overflow-y-auto hide-scrollbar transition-all duration-300 ${
+                              expandedDescriptions[index] ? "max-h-32" : "max-h-12"
+                            }`}>
+                              <CardDescription className="text-xs lg:text-sm text-gray-600 dark:text-gray-400 leading-relaxed pr-1">
+                                {project.description}
+                              </CardDescription>
+                            </div>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => toggleDescription(index)}
+                              className="absolute bottom-0 right-0 p-1 h-6 text-xs font-medium bg-gradient-to-l from-white dark:from-black via-white/30 dark:via-black/90 to-transparent w-full text-right hover:bg-transparent"
+                            >
+                              {expandedDescriptions[index] ? (
+                                <ChevronUp className="h-4 w-4 ml-auto" />
+                              ) : (
+                                <ChevronDown className="h-4 w-4 ml-auto" />
+                              )}
+                            </Button>
+                          </div>
+                        </CardHeader>
+                        <CardContent>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech) => (
+                              <Badge
+                                key={tech}
+                                variant={
+                                  tech === "NestJS" || tech === "PostgreSQL" || tech === "TypeORM"
+                                    ? "default"
+                                    : tech === "Node.js" || tech === "MongoDB"
+                                      ? "secondary"
+                                      : "outline"
+                                }
+                                className={`text-xs transition-all duration-300 hover:scale-105 ${
+                                  tech === "NestJS" || tech === "PostgreSQL" || tech === "TypeORM"
+                                    ? "bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 hover:bg-blue-200 dark:hover:bg-blue-900/50"
+                                    : tech === "Node.js" || tech === "MongoDB"
+                                      ? "bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700 hover:bg-green-200 dark:hover:bg-green-900/50"
+                                      : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700"
+                                }`}
+                              >
+                                {tech}
+                              </Badge>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ) : (
+                    <motion.div
+                      key={index}
+                      initial="hidden"
+                      whileInView="visible"
+                      variants={cardVariants}
+                      viewport={{ once: true }}
+                      whileHover={{ scale: 1.03, transition: { duration: 0.2 } }}
+                      whileTap={{ scale: 0.98 }}
+                      className="h-full"
+                    >
                     <Card
                       key={index}
-                      className={`group overflow-hidden bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 hover:scale-105 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col ${
+                      className={`group overflow-hidden bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 hover:scale-105 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col ${
                         project.featured ? "ring-2 ring-indigo-500/50 dark:ring-indigo-400/50" : ""
                       }`}
                     >
@@ -735,7 +837,7 @@ export default function Portfolio() {
                           style={{ background: 'rgba(0,0,0,0.45)' }}
                         >
                           <button
-                            className="px-4 py-2 rounded-lg bg-[#020203] text-white font-semibold shadow-lg hover:bg-[#020203] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 text-base"
+                            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/40 hover:shadow-indigo-500/60 transform hover:scale-105 transition-all duration-300 text-sm"
                           >
                             Live Link
                           </button>
@@ -792,10 +894,11 @@ export default function Portfolio() {
                           ))}
                         </div>
                       </CardContent>
-                    </Card>
-                  </motion.div>
+                      </Card>
+                    </motion.div>
+                  )
                 ))}
-              </motion.div>
+              </div>
           </div>
         </motion.section>
 
@@ -834,7 +937,7 @@ export default function Portfolio() {
                       className="block w-full"
                     >
 
-                      <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer group">
+                      <Card className="aspect-square w-full text-center bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105 cursor-pointer group">
                         <CardHeader className="pb-4">
                           <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                             <Mail className="h-8 w-8 text-white" />
@@ -850,7 +953,7 @@ export default function Portfolio() {
 
 
 
-                  <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <svg
@@ -887,7 +990,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <Github className="h-8 w-8 text-white" />
@@ -909,7 +1012,7 @@ export default function Portfolio() {
                     </CardContent>
                   </Card>
 
-                  <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-white/60 dark:bg-white/5 backdrop-blur-md border-white/40 dark:border-white/10 shadow-xl hover:shadow-2xl hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <Linkedin className="h-8 w-8 text-white" />
@@ -943,7 +1046,7 @@ export default function Portfolio() {
                   variant="outline"
                   size="lg"
                   onClick={downloadCV}
-                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95"
                 >
                   <Download className="h-5 w-5 mr-2" />
                   Download CV
@@ -951,7 +1054,7 @@ export default function Portfolio() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 px-8 py-4 text-lg font-bold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 transform hover:scale-105 active:scale-95"
                   asChild
                 >
                   <a href="https://www.linkedin.com/in/fahadfarman/" target="_blank" rel="noopener noreferrer">
@@ -966,7 +1069,7 @@ export default function Portfolio() {
 
 
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/20 dark:border-white/10 bg-white/40 dark:bg-black/40 backdrop-blur-md">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">© 2024 Fahad Farman. All rights reserved.</p>
@@ -974,7 +1077,7 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+                className="hover:bg-violet-100 dark:hover:bg-violet-900/30 hover:text-violet-600 dark:hover:text-violet-400 transition-all duration-300 transform hover:scale-105"
                 asChild
               >
                 <a href="https://github.com/fahad-khan11" target="_blank" rel="noopener noreferrer">
@@ -985,11 +1088,12 @@ export default function Portfolio() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+                className="hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400 transition-all duration-300 transform hover:scale-105"
                 asChild
               >
                 <a href="https://www.linkedin.com/in/fahadfarman/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-5 w-5 mr-2" />                  LinkedIn
+                  <Linkedin className="h-5 w-5 mr-2" />
+                  LinkedIn
                 </a>
               </Button>
             </div>
