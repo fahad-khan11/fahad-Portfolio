@@ -64,7 +64,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-2xl shadow-black/10 dark:shadow-white/10">
+    <Card className="bg-black/5 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 dark:shadow-white/10">
       <CardHeader className="pb-6">
         <div className="flex items-center gap-3 mb-4">
           <div className="p-3 bg-gradient-to-br from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-xl shadow-lg">
@@ -106,7 +106,7 @@ export function ContactForm() {
                   type="email"
                   placeholder="your.email@example.com"
                   required
-                  className="pl-10 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400"
+                  className="pl-10 bg-white/5 dark:bg-black/5 border-white/20 dark:border-white/10 focus:border-indigo-500/50 dark:focus:border-indigo-400/50 backdrop-blur-sm transition-all duration-300"
                 />
               </div>
             </div>
@@ -121,7 +121,7 @@ export function ContactForm() {
               placeholder="Tell me about your project or just say hello!"
               rows={5}
               required
-              className="bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600 focus:border-gray-500 dark:focus:border-gray-400 resize-none"
+              className="bg-white/5 dark:bg-black/5 border-white/20 dark:border-white/10 focus:border-indigo-500/50 dark:focus:border-indigo-400/50 backdrop-blur-sm resize-none transition-all duration-300"
             />
           </div>
           <Button

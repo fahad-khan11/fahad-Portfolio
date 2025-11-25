@@ -183,9 +183,9 @@ export default function Portfolio() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-black dark:via-gray-900 dark:to-gray-800 text-foreground transition-all duration-500">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-pink-50 dark:from-slate-950 dark:to-indigo-950 text-foreground transition-all duration-500">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/90 dark:bg-black/90 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 z-50 shadow-lg shadow-black/5 dark:shadow-white/5">
+      <nav className="fixed top-0 w-full bg-white/10 dark:bg-black/20 backdrop-blur-xl border-b border-white/20 dark:border-white/10 z-50 shadow-lg shadow-black/5 dark:shadow-white/5 supports-[backdrop-filter]:bg-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-black via-gray-700 to-gray-500 dark:from-white dark:via-gray-300 dark:to-gray-500 bg-clip-text text-transparent">
@@ -273,7 +273,7 @@ export default function Portfolio() {
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-6 border-t border-gray-200/50 dark:border-gray-700/50 bg-white/95 dark:bg-black/95 backdrop-blur-xl">
+            <div className="md:hidden py-6 border-t border-white/20 dark:border-white/10 bg-white/80 dark:bg-black/80 backdrop-blur-xl">
               <div className="flex flex-col space-y-4">
                 <button
                   onClick={() => scrollToSection("home")}
@@ -328,16 +328,15 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <AnimatePresence>
         <motion.section
           id="home"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           variants={sectionVariants}
           className="pt-20 pb-16 lg:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-black/5 via-transparent to-gray-900/10 dark:from-white/5 dark:to-gray-100/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 via-transparent to-pink-500/5 dark:from-indigo-500/10 dark:to-purple-500/10"></div>
           <div className="max-w-7xl mx-auto relative">
             <div className="text-center py-16 sm:py-20 lg:py-32">
               <div className="mb-8 lg:mb-12">
@@ -407,17 +406,15 @@ export default function Portfolio() {
             </div>
           </div>
         </motion.section>
-      </AnimatePresence>
 
       {/* About Section */}
-      <AnimatePresence>
         <motion.section
           id="about"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           variants={sectionVariants}
-          className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50/80 via-white to-gray-100/80 dark:from-gray-900/80 dark:via-black dark:to-gray-800/80"
+          className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 lg:mb-24">
@@ -437,7 +434,7 @@ export default function Portfolio() {
                 <h3 className="text-2xl lg:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-4">Education</h3>
                 <div className="w-16 h-0.5 bg-gray-400 dark:bg-gray-600 mx-auto"></div>
               </div>
-              <Card className="max-w-4xl mx-auto bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-2xl shadow-black/10 dark:shadow-white/10 hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+              <Card className="max-w-4xl mx-auto bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
                 <CardHeader className="pb-6 lg:pb-8">
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-gray-800 to-black dark:from-gray-200 dark:to-white rounded-2xl shadow-xl">
@@ -455,7 +452,7 @@ export default function Portfolio() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 lg:p-6">
+                  <div className="bg-white/50 dark:bg-black/20 rounded-xl p-4 lg:p-6">
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3">Relevant Coursework:</h4>
                     <div className="flex flex-wrap gap-2">
                       {["Database", "OOP", "DSA", "Programming Fundamentals"].map((course) => (
@@ -480,7 +477,7 @@ export default function Portfolio() {
                 <div className="w-16 h-0.5 bg-gray-400 dark:bg-gray-600 mx-auto"></div>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-                <Card className="group bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Code className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -502,7 +499,9 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
 
-                <Card className="group bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+
+
+                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Server className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -524,7 +523,9 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
 
-                <Card className="group bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+
+
+                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Database className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -546,7 +547,9 @@ export default function Portfolio() {
                   </CardContent>
                 </Card>
 
-                <Card className="group bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
+
+
+                <Card className="group bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2">
                   <CardHeader className="text-center pb-6">
                     <div className="p-4 lg:p-5 bg-gradient-to-br from-orange-600 to-orange-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Award className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
@@ -571,15 +574,14 @@ export default function Portfolio() {
             </div>
           </div>
         </motion.section>
-      </AnimatePresence>
+
 
       {/* Experience Section */}
-      <AnimatePresence>
         <motion.section
           id="experience"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           variants={sectionVariants}
           className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8"
         >
@@ -591,7 +593,9 @@ export default function Portfolio() {
               <div className="w-24 h-1 bg-gradient-to-r from-black to-gray-500 dark:from-white dark:to-gray-400 mx-auto"></div>
             </div>
 
-            <Card className="max-w-5xl mx-auto bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-2xl shadow-black/10 dark:shadow-white/10 hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+
+
+            <Card className="max-w-5xl mx-auto bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
               <CardHeader className="pb-6 lg:pb-8">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-6">
                   <div className="p-4 lg:p-5 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl shadow-xl">
@@ -622,7 +626,7 @@ export default function Portfolio() {
               </CardContent>
             </Card>
             {/* Intern Experience */}
-            <Card className="max-w-5xl mx-auto mt-8 bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-2xl shadow-black/10 dark:shadow-white/10 hover:shadow-3xl transition-all duration-500 transform hover:scale-[1.02]">
+            <Card className="max-w-5xl mx-auto mt-8 bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02]">
               <CardHeader className="pb-6 lg:pb-8">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 lg:gap-6">
                   <div className="p-4 lg:p-5 bg-gradient-to-br from-green-600 to-green-800 rounded-2xl shadow-xl">
@@ -655,17 +659,16 @@ export default function Portfolio() {
             </Card>
           </div>
         </motion.section>
-      </AnimatePresence>
+
 
       {/* Projects Section */}
-      <AnimatePresence>
         <motion.section
           id="projects"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           variants={sectionVariants}
-          className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50/80 via-white to-gray-100/80 dark:from-gray-900/80 dark:via-black dark:to-gray-800/80"
+          className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8"
         >
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-20 lg:mb-24">
@@ -679,7 +682,8 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <Suspense fallback={<div>Loading projects...</div>}>
+
+
               <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -697,8 +701,8 @@ export default function Portfolio() {
                   >
                     <Card
                       key={index}
-                      className={`group overflow-hidden bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col ${
-                        project.featured ? "ring-2 ring-gray-300 dark:ring-gray-600" : ""
+                      className={`group overflow-hidden bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 hover:scale-105 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col ${
+                        project.featured ? "ring-2 ring-indigo-500/50 dark:ring-indigo-400/50" : ""
                       }`}
                     >
                       {project.featured && (
@@ -792,18 +796,15 @@ export default function Portfolio() {
                   </motion.div>
                 ))}
               </motion.div>
-            </Suspense>
           </div>
         </motion.section>
-      </AnimatePresence>
 
       {/* Contact Section */}
-      <AnimatePresence>
         <motion.section
           id="contact"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true }}
           variants={sectionVariants}
           className="py-20 lg:py-28 px-4 sm:px-6 lg:px-8"
         >
@@ -832,7 +833,8 @@ export default function Portfolio() {
                       href="https://mail.google.com/mail/?view=cm&to=fahadfarman00@gmail.com" target="_blank"
                       className="block w-full"
                     >
-                      <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer group">
+
+                      <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer group">
                         <CardHeader className="pb-4">
                           <div className="p-4 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl shadow-xl mx-auto w-fit mb-4 group-hover:scale-110 transition-transform duration-300">
                             <Mail className="h-8 w-8 text-white" />
@@ -846,7 +848,9 @@ export default function Portfolio() {
                     </a>
                   </Button>
 
-                  <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+
+
+                  <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <svg
@@ -883,7 +887,7 @@ export default function Portfolio() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
-                  <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-gray-700 to-gray-900 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <Github className="h-8 w-8 text-white" />
@@ -905,7 +909,7 @@ export default function Portfolio() {
                     </CardContent>
                   </Card>
 
-                  <Card className="aspect-square w-full text-center bg-gradient-to-br from-white via-gray-50/50 to-gray-100 dark:from-gray-800 dark:via-gray-900/50 dark:to-black border-gray-200/50 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-white/5 hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
+                  <Card className="aspect-square w-full text-center bg-white/40 dark:bg-white/5 backdrop-blur-md border-white/20 dark:border-white/10 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
                     <CardHeader className="pb-4">
                       <div className="p-4 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl shadow-xl mx-auto w-fit mb-4">
                         <Linkedin className="h-8 w-8 text-white" />
@@ -959,10 +963,10 @@ export default function Portfolio() {
             </div>
           </div>
         </motion.section>
-      </AnimatePresence>
+
 
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-gray-200/50 dark:border-gray-700/50 bg-gradient-to-br from-gray-50/80 via-white to-gray-100/80 dark:from-gray-900/80 dark:via-black dark:to-gray-800/80">
+      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/20 dark:border-white/10 bg-white/40 dark:bg-black/40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <p className="text-gray-600 dark:text-gray-400 mb-6 text-lg">© 2024 Fahad Farman. All rights reserved.</p>
