@@ -1,6 +1,19 @@
 import type { Metadata } from 'next'
+import { Sora, DM_Sans } from 'next/font/google'
 import './globals.css'
 import { Providers } from './providers'
+
+const fontHeading = Sora({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const fontBody = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Fahad Farman - Full Stack Developer | Software Engineer',
@@ -91,8 +104,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body>
+    <html lang="en" suppressHydrationWarning className={`dark ${fontHeading.variable} ${fontBody.variable}`}>
+      <body className="font-[family-name:var(--font-body)] antialiased">
         <Providers>
           {children}
         </Providers>
