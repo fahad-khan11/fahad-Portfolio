@@ -183,7 +183,7 @@ export default function Portfolio() {
             url: "https://fahadfarman.me",
             image: {
               "@type": "ImageObject",
-              url: "https://fahadfarman.me/images/fahad11.png",
+              url: "https://fahadfarman.me/fahad2.png",
               width: 192,
               height: 192
             },
@@ -577,7 +577,7 @@ export default function Portfolio() {
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
                   <Image
-                    src="/images/fahad11.png"
+                    src="/fahad2.png"
                     alt="Fahad Farman"
                     width={192}
                     height={192}

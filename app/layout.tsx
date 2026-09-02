@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: 'Fahad Farman Portfolio',
     images: [
       {
-        url: '/images/fahad11.png',
+        url: '/fahad2.png',
         width: 1200,
         height: 630,
         alt: 'Fahad Farman - Full Stack Developer',
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fahad Farman - Full Stack Developer',
     description: 'Full Stack Developer specialized in Next.js, React, Node.js, and modern web technologies.',
-    images: ['/images/fahad11.png'],
+    images: ['/fahad2.png'],
   },
   robots: {
     index: true,
