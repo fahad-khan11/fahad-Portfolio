@@ -96,6 +96,9 @@ export const metadata: Metadata = {
   verification: {
     google: 'BxG9kk482ZkckC22J6DbalOJldeonNAVa8ITGXmJ8vg', // Google Search Console verification
   },
+  icons: {
+    icon: '/fahad2.png',
+  },
 }
 
 export default function RootLayout({
