@@ -10,7 +10,9 @@ const links = [
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
   { href: "#skills", label: "Skills" },
+  { href: "/services", label: "Services" },
 ]
+const hrefFor = (href: string, base: string) => (href.startsWith("/") ? href : `${base}${href}`)
 
 export function Nav({ base = "" }: { base?: string }) {
   const [open, setOpen] = useState(false)
@@ -23,7 +25,7 @@ export function Nav({ base = "" }: { base?: string }) {
       },
       { rootMargin: "-45% 0px -50% 0px" },
     )
-    ;[...links.map((l) => l.href), "#contact"].forEach((h) => {
+    ;[...links.map((l) => l.href).filter((h) => h.startsWith("#")), "#contact"].forEach((h) => {
       const el = document.querySelector(h)
       if (el) io.observe(el)
     })
@@ -52,7 +54,7 @@ export function Nav({ base = "" }: { base?: string }) {
           {links.map((l) => (
             <li key={l.href}>
               <a
-                href={`${base}${l.href}`}
+                href={hrefFor(l.href, base)}
                 className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
                   active === l.href ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
@@ -109,7 +111,7 @@ export function Nav({ base = "" }: { base?: string }) {
               className={`transition-all duration-500 ${open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
               style={{ transitionDelay: open ? `${i * 60}ms` : "0ms" }}
             >
-              <a href={`${base}${l.href}`} onClick={() => setOpen(false)} className="font-[family-name:var(--font-heading)] text-3xl font-semibold">
+              <a href={hrefFor(l.href, base)} onClick={() => setOpen(false)} className="font-[family-name:var(--font-heading)] text-3xl font-semibold">
                 {l.label}
               </a>
             </li>

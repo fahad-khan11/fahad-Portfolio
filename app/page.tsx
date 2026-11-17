@@ -94,8 +94,14 @@ export default function Home() {
               Open to freelance & full-time roles
             </a>
 
-            <h1 id="hero-title" className="mt-7 font-[family-name:var(--font-heading)] font-extrabold leading-[0.95] tracking-tight">
-              <span className="sr-only">Fahad Farman, Full Stack &amp; AI Engineer: </span>
+            <h1
+              id="hero-title"
+              className="enter mt-7 font-mono text-[11px] font-medium uppercase tracking-[0.22em] text-primary sm:text-sm"
+              style={{ ["--i" as string]: 2 }}
+            >
+              Fahad Farman <span className="text-muted-foreground">·</span> Full Stack &amp; AI Application Engineer
+            </h1>
+            <p className="mt-4 font-[family-name:var(--font-heading)] font-extrabold leading-[0.95] tracking-tight">
               <span className="w3d block text-[clamp(2.6rem,9vw,6.5rem)]">
                 {["From", "idea"].map((w, i) => (
                   <span key={w} style={{ ["--w" as string]: i }}>{w}&nbsp;</span>
@@ -106,7 +112,7 @@ export default function Home() {
                   <span key={w} style={{ ["--w" as string]: i + 2 }}>{w}&nbsp;</span>
                 ))}
               </span>
-            </h1>
+            </p>
 
             <p className="enter mx-auto mt-7 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl" style={{ ["--i" as string]: 4 }}>
               I&apos;m <span className="font-semibold text-foreground">Fahad Farman</span>, a Full Stack Engineer building AI-powered SaaS, RAG pipelines
@@ -387,6 +393,8 @@ export default function Home() {
               {["About", "Experience", "Projects", "Skills", "Contact"].map((l) => (
                 <li key={l}><a href={`#${l.toLowerCase()}`} className="hover:text-primary">{l}</a></li>
               ))}
+              <li><a href="/services" className="hover:text-primary">Services &amp; hiring</a></li>
+              <li><a href="/projects" className="hover:text-primary">Case studies</a></li>
             </ul>
           </nav>
           <div>

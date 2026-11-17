@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next"
 import { Sora, DM_Sans, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
-import { SITE_URL, profile, experience, skills, education, projects } from "@/lib/data"
+import { SITE_URL, profile, experience, skills, education, projects, certifications, CERTS_URL } from "@/lib/data"
 
 const fontHeading = Sora({ subsets: ["latin"], variable: "--font-heading", display: "swap", weight: ["500", "600", "700", "800"] })
 const fontBody = DM_Sans({ subsets: ["latin"], variable: "--font-body", display: "swap" })
@@ -99,6 +99,28 @@ const jsonLd = {
       alumniOf: { "@type": "CollegeOrUniversity", name: education.school, url: "https://www.comsats.edu.pk" },
       sameAs: [profile.linkedin, profile.github],
       knowsAbout: [...new Set([...skills.flatMap((s) => s.items), "Retrieval-Augmented Generation", "Large Language Models", "Generative AI", "Agentic AI", "AI Engineering"])],
+      hasOccupation: [
+        {
+          "@type": "Occupation",
+          name: "Full Stack Engineer",
+          occupationLocation: { "@type": "City", name: "Islamabad, Pakistan" },
+          skills: "Next.js, React, NestJS, Node.js, TypeScript, PostgreSQL, MongoDB, REST APIs, WebSockets, WebRTC",
+        },
+        {
+          "@type": "Occupation",
+          name: "AI Application Engineer",
+          occupationLocation: { "@type": "City", name: "Islamabad, Pakistan" },
+          skills: "RAG pipelines, LangChain, LangGraph, OpenAI API, AI agents, Model Context Protocol, vector databases, LLM fine-tuning, prompt engineering",
+        },
+      ],
+      hasCredential: certifications.map((c) => ({
+        "@type": "EducationalOccupationalCredential",
+        name: c.title,
+        credentialCategory: "certificate",
+        recognizedBy: { "@type": "Organization", name: c.issuer },
+        identifier: c.id,
+        url: CERTS_URL,
+      })),
     },
     {
       "@type": "WebSite",

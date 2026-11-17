@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
       images: [`${SITE_URL}${profile.photo}`],
     },
+    { url: `${SITE_URL}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${SITE_URL}/projects`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     ...projects.map((p) => ({
       url: `${SITE_URL}/projects/${p.slug}`,
