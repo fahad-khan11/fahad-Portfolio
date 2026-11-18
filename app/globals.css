@@ -632,3 +632,55 @@
 
 .fly-avatar { transition: opacity 0.35s; }
 .fly-avatar[data-away="true"] { opacity: 0 !important; pointer-events: none !important; }
+
+/* ---------- RAG pipeline illustration (services hero) ---------- */
+.rag-step .rag-node,
+.rag-step > div {
+  animation: rag-lit 7.5s ease-in-out infinite;
+  animation-delay: calc(var(--s) * 1.5s);
+}
+@keyframes rag-lit {
+  0%, 22%, 100% { border-color: rgb(255 255 255 / 0.08); box-shadow: none; color: inherit; }
+  6%, 16% {
+    border-color: hsl(var(--primary) / 0.6);
+    box-shadow: 0 0 0 4px hsl(var(--primary) / 0.08), 0 10px 30px -12px hsl(var(--primary) / 0.5);
+    color: hsl(var(--primary));
+  }
+}
+.rag-pulse { animation: rag-travel 7.5s linear infinite; }
+@keyframes rag-travel {
+  0% { top: 3rem; opacity: 0; }
+  5% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { top: calc(100% - 7rem); opacity: 0; }
+}
+
+/* Bento service cards */
+.svc-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0.01));
+  transition: border-color 0.4s, transform 0.4s;
+}
+.svc-card:hover { border-color: hsl(var(--primary) / 0.35); transform: translateY(-3px); }
+.svc-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -30% -60% auto;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: hsl(var(--primary) / 0.1);
+  filter: blur(60px);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.svc-card:hover::after { opacity: 1; }
+.svc-featured {
+  border-color: hsl(var(--primary) / 0.3);
+  background: radial-gradient(ellipse at top left, hsl(var(--primary) / 0.12), transparent 60%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.035), rgb(255 255 255 / 0.01));
+}
