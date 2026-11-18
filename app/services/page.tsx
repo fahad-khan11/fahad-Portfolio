@@ -152,41 +152,54 @@ export default function ServicesPage() {
       <Effects />
       <Nav base="/" />
       <main className="relative overflow-x-clip">
-        {/* ================= HERO ================= */}
-        <section className="relative pb-16 pt-28 sm:pb-20 sm:pt-36 lg:pb-24">
+        {/* ================= HERO (centered) ================= */}
+        <section className="relative pb-16 pt-32 sm:pb-20 sm:pt-40 lg:pb-24">
           <div aria-hidden className="grid-bg pointer-events-none absolute inset-0 -z-10" />
-          <div aria-hidden className="pointer-events-none absolute -left-40 top-10 -z-10 h-[30rem] w-[30rem] rounded-full bg-primary/[0.1] blur-[120px]" />
-          <div aria-hidden className="pointer-events-none absolute -right-40 bottom-0 -z-10 h-[26rem] w-[26rem] rounded-full bg-emerald-400/[0.07] blur-[120px]" />
+          <div aria-hidden className="pointer-events-none absolute left-1/2 top-24 -z-10 h-[28rem] w-[min(48rem,90vw)] -translate-x-1/2 rounded-full bg-primary/[0.1] blur-[120px]" />
 
-          <div className="container-x grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-16 [&>*]:min-w-0">
-            <div>
+          <div className="container-x">
+            <div className="mx-auto max-w-4xl text-center">
               <span
                 className="enter inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-medium text-primary"
                 style={{ ["--i" as string]: 0, ["--sd" as string]: "60ms" }}
               >
                 <span className="pulse-dot relative h-1.5 w-1.5 rounded-full bg-primary" /> Taking on new projects
               </span>
-              <h1 className="enter mt-6 font-mono text-xs uppercase tracking-[0.18em] text-primary sm:text-sm" style={{ ["--i" as string]: 1, ["--sd" as string]: "60ms" }}>
+              <h1
+                className="enter mx-auto mt-6 max-w-2xl font-mono text-[11px] uppercase tracking-[0.2em] text-primary sm:text-xs"
+                style={{ ["--i" as string]: 1, ["--sd" as string]: "60ms" }}
+              >
                 Hire an AI Application Engineer &amp; Full Stack Engineer
               </h1>
-              <p className="enter mt-4 font-[family-name:var(--font-heading)] text-[clamp(2.1rem,4.2vw,3.4rem)] font-extrabold leading-[1.06]" style={{ ["--i" as string]: 2, ["--sd" as string]: "60ms" }}>
-                AI-powered products, <span className="text-gradient">engineered end to end.</span>
+              <p
+                className="enter mt-5 font-[family-name:var(--font-heading)] text-[clamp(2.25rem,6vw,4.5rem)] font-extrabold leading-[1.02] tracking-tight"
+                style={{ ["--i" as string]: 2, ["--sd" as string]: "60ms" }}
+              >
+                AI-powered products,
+                <br />
+                <span className="text-gradient">engineered end to end.</span>
               </p>
-              <p className="enter mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg" style={{ ["--i" as string]: 3, ["--sd" as string]: "60ms" }}>
+              <p
+                className="enter mx-auto mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg"
+                style={{ ["--i" as string]: 3, ["--sd" as string]: "60ms" }}
+              >
                 I&apos;m {profile.name}. I build RAG pipelines, LLM features and AI agents, and the production SaaS platforms they
                 live in, with Next.js, NestJS and TypeScript. Remote, for clients worldwide.
               </p>
-              <div className="enter mt-8 flex flex-wrap gap-3" style={{ ["--i" as string]: 4, ["--sd" as string]: "60ms" }}>
+              <div className="enter mt-8 flex flex-wrap justify-center gap-3" style={{ ["--i" as string]: 4, ["--sd" as string]: "60ms" }}>
                 <Link href="/#contact" className="btn-primary">Start a project <ArrowRight className="h-4 w-4" /></Link>
                 <Link href="/projects" className="btn-ghost">See case studies</Link>
               </div>
-              <dl className="enter mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-white/[0.08] pt-6" style={{ ["--i" as string]: 5, ["--sd" as string]: "60ms" }}>
+              <dl
+                className="enter mx-auto mt-12 grid max-w-xl grid-cols-3 divide-x divide-white/[0.08] rounded-2xl border border-white/[0.08] bg-white/[0.02] py-5 backdrop-blur"
+                style={{ ["--i" as string]: 5, ["--sd" as string]: "60ms" }}
+              >
                 {[
                   { v: "2+", l: "years shipping" },
                   { v: String(projects.length), l: "case studies" },
                   { v: String(certifications.length), l: "AI & dev certs" },
                 ].map((x) => (
-                  <div key={x.l}>
+                  <div key={x.l} className="px-2">
                     <dt className="sr-only">{x.l}</dt>
                     <dd className="font-[family-name:var(--font-heading)] text-2xl font-bold sm:text-3xl">{x.v}</dd>
                     <dd className="mt-0.5 text-xs text-muted-foreground sm:text-sm">{x.l}</dd>
@@ -195,7 +208,8 @@ export default function ServicesPage() {
               </dl>
             </div>
 
-            <div className="enter" style={{ ["--i" as string]: 3, ["--sd" as string]: "60ms" }}>
+            <div className="enter mx-auto mt-14 max-w-6xl sm:mt-16" style={{ ["--i" as string]: 6, ["--sd" as string]: "60ms" }}>
+              <p className="mb-4 text-center font-mono text-xs text-muted-foreground">{"// how a RAG pipeline answers a question"}</p>
               <RagPipeline />
             </div>
           </div>
